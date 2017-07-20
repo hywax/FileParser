@@ -1,0 +1,33 @@
+{
+  "name": "axp-dev/parser",
+  "description": "Parser Library for API",
+  "homepage": "https://github.com/axp-dev/parser",
+  "keywords": ["parser","json","xml"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Pushkarev",
+      "email": "axp-dev@yandex.com",
+      "homepage": "https://github.com/axp-dev"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "AXP\\Parser\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AXP\\Parser\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  }
+}
