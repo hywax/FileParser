@@ -18,7 +18,13 @@ class Serialize implements FormatInterface
      */
     public function parse($string)
     {
-        // TODO: Implement parse() method.
+        if ( $string ) {
+            try {
+                return unserialize(trim($string));
+            } catch (\Exception $e) {
+                throw new ParserException('Failed to parse serialized');
+            }
+        }
 
         return [];
     }
