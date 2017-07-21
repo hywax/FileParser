@@ -19,3 +19,12 @@ $data      = $parser->serialize($serialize);
 
 print_r($data);
 ```
+
+#### Query String: ####
+```php
+$parser      = new Parser();
+$queryString = 'first=value&arr[]=foo+bar&arr[]=baz';
+$data        = $parser->queryString($queryString);
+
+print_r($data);
+```

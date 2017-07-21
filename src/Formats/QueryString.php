@@ -18,7 +18,11 @@ class QueryString implements FormatInterface
      */
     public function parse($string)
     {
-        // TODO: Implement parse() method.
+        if ( $string ) {
+            parse_str(trim($string), $data);
+
+            return $data;
+        }
 
         return [];
     }
