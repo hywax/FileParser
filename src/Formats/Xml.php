@@ -18,7 +18,15 @@ class Xml implements FormatInterface
      */
     public function parse($string)
     {
-        // TODO: Implement parse() method.
+        if ( $string ) {
+            try {
+                $xml = simplexml_load_string($string, 'SimpleXMLElement', (LIBXML_VERSION >= 20700) ? (LIBXML_PARSEHUGE | LIBXML_NOCDATA) : LIBXML_NOCDATA);
+
+                return $xml;
+            } catch (\Exception $e) {
+                throw new ParserException('Failed to parse xml');
+            }
+        }
 
         return [];
     }

@@ -1,6 +1,13 @@
 # Parser #
 Парсер для разбора json, xml, serialize, query string в php массив.
 
+## Установка: ##
+
+#### Composer ####
+```
+composer require axp-dev/parser
+```
+
 ## Документация: ##
 #### Json: ####
 ```php
@@ -25,6 +32,21 @@ print_r($data);
 $parser      = new Parser();
 $queryString = 'first=value&arr[]=foo+bar&arr[]=baz';
 $data        = $parser->queryString($queryString);
+
+print_r($data);
+```
+
+#### XML: ####
+```php
+$parser      = new Parser();
+$xml         = '<?xml version="1.0" encoding="UTF-8"?>
+                <note>
+                  <to>Tove</to>
+                  <from>Jani</from>
+                  <heading>Reminder</heading>
+                  <body>Don\'t forget me this weekend!</body>
+                </note>';
+$data        = $parser->xml($xml);
 
 print_r($data);
 ```
