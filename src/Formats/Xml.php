@@ -27,13 +27,45 @@ class Xml implements FormatInterface
         if ( $string ) {
             try {
                 $xml = simplexml_load_string($string, 'SimpleXMLElement', (LIBXML_VERSION >= 20700) ? (LIBXML_PARSEHUGE | LIBXML_NOCDATA) : LIBXML_NOCDATA);
+                $result = [];
 
-                return $xml;
+                return $this->normalizeSimpleXML($xml, $result);
             } catch (\Exception $e) {
                 throw new FileParserException('Failed to parse xml');
             }
         }
 
         return [];
+    }
+
+    /**
+     * Formatting XML
+     *
+     * @param \SimpleXMLElement $data
+     * @param array $result
+     *
+     * @return array
+     */
+    protected function normalizeSimpleXML($data, &$result) {
+        if (is_object($data)) {
+            $data = get_object_vars($data);
+        }
+
+        if (is_array($data)) {
+            foreach ($data as $key => $value) {
+                $res = null;
+                $this->normalizeSimpleXML($value, $res);
+
+                if (($key == '@attributes') && ($key)) {
+                    $result = $res;
+                } else {
+                    $result[$key] = $res;
+                }
+            }
+        } else {
+            $result = $data;
+        }
+
+        return $result;
     }
 }

@@ -3,6 +3,7 @@
 namespace AXP\FileParser;
 
 use AXP\FileParser\Formats\Json;
+use AXP\FileParser\Formats\Xml;
 use AXP\FileParser\Interfaces\FormatInterface;
 
 /**
@@ -24,6 +25,18 @@ class FileParser
     public static function json($string)
     {
         return self::parse($string, new Json());
+    }
+
+    /**
+     * Parse XML
+     *
+     * @param string $string
+     *
+     * @return array
+     */
+    public static function xml($string)
+    {
+        return self::parse($string, new Xml());
     }
 
     /**
