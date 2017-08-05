@@ -1,7 +1,7 @@
 # File Parser
 File Parser Library for PHP. List of formats: json, xml, query string, serialize.
 
-##Contents
+## Contents
 1. [Installation](#Installation)
     + [Composer](#Composer)
 2. [Usage](#Usage)
