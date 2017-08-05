@@ -1,9 +1,9 @@
 {
   "name": "axp-dev/file-parser",
-  "description": "Field Parser Library for API",
+  "description": "File Parser Library for PHP",
   "homepage": "https://github.com/axp-dev/FileParser",
-  "keywords": ["parser","json","xml"],
-  "version": "2.0.0-beta",
+  "keywords": ["parser","json","xml", "querystring", "serialize", "file"],
+  "version": "2.0.0",
   "license": "MIT",
   "authors": [
     {
@@ -19,5 +19,6 @@
     "psr-4": {
       "AXP\\FileParser\\": "src"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
