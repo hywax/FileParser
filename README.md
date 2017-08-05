@@ -6,17 +6,17 @@
 File Parser Library for PHP. List of formats: json, xml, query string, serialize.
 
 ## Contents
-1. [Installation](#Installation)
-    + [Composer](#Composer)
-    + [Laravel](#Laravel)
-    + [Lumen](#Lumen)
-2. [Usage](#Usage)
-    + [Json](#Json)
-    + [XML](#XML)
-    + [Query String](#Query-String)
-    + [Serialize](#Serialize)
-3. [Author](#Author)
-4. [License](#License)
+1. [Installation](#installation)
+    + [Composer](#composer)
+    + [Laravel](#laravel)
+    + [Lumen](#lumen)
+2. [Usage](#usage)
+    + [Json](#json)
+    + [XML](#xml)
+    + [Query String](#query-string)
+    + [Serialize](#serialize)
+3. [Author](#author)
+4. [License](#license)
 
 ## Installation
 #### Composer
@@ -53,20 +53,55 @@ class_alias('AXP\FileParser\Facades\FileParser', 'FileParser');
 ```php
 public static function json($string) : array
 ```
+#### Example
+```php
+$string = '{"id":1,"name":"A green door","price":12.5,"tags":["home","green"]}';
+$data   = FileParser::json($string);
+
+print_r($data);
+```
 
 ### XML
 ```php
 public static function xml($string) : array
+```
+#### Example
+```php
+$string = '<?xml version="1.0" encoding="UTF-8" ?>
+           <card>
+                <id>1</id>
+                <name>A green door</name>
+                <price>12.5</price>
+                <tags>home</tags>
+                <tags>green</tags>
+           </card>';
+$data   = FileParser::xml($string);
+
+print_r($data);
 ```
 
 ### Query String
 ```php
 public static function queryString($string) : array
 ```
+#### Example
+```php
+$string = 'id=1&name=A+green+door&price=12.5&tags%5B0%5D=home&tags%5B1%5D=green';
+$data   = FileParser::queryString($string);
+
+print_r($data);
+```
 
 ### Serialize
 ```php
 public static function serialize($string) : array
+```
+#### Example
+```php
+$string = 'a:4:{s:2:"id";s:1:"1";s:4:"name";s:12:"A green door";s:5:"price";s:4:"12.5";s:4:"tags";a:2:{i:0;s:4:"home";i:1;s:5:"green";}}';
+$data   = FileParser::serialize($string);
+
+print_r($data);
 ```
 
 ## Author

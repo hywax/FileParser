@@ -73,7 +73,7 @@ class FileParser
      *
      * @return array
      */
-    protected function parse($string, FormatInterface $format)
+    protected static function parse($string, FormatInterface $format)
     {
         return $format->parse($string);
     }
