@@ -4,6 +4,7 @@ namespace AXP\FileParser;
 
 use AXP\FileParser\Formats\Json;
 use AXP\FileParser\Formats\QueryString;
+use AXP\FileParser\Formats\Serialize;
 use AXP\FileParser\Formats\Xml;
 use AXP\FileParser\Interfaces\FormatInterface;
 
@@ -50,6 +51,18 @@ class FileParser
     public static function queryString($string)
     {
         return self::parse($string, new QueryString());
+    }
+
+    /**
+     * Parse Serialize
+     *
+     * @param string $string
+     *
+     * @return array
+     */
+    public static function serialize($string)
+    {
+        return self::parse($string, new Serialize());
     }
 
     /**
