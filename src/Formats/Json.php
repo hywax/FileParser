@@ -1,19 +1,26 @@
 <?php
 
-namespace AXP\Parser\Formats;
+namespace AXP\FileParser\Formats;
 
-use AXP\Parser\Exceptions\ParserException;
-use AXP\Parser\Interfaces\FormatInterface;
+use AXP\FileParser\Exceptions\FileParserException;
+use AXP\FileParser\Interfaces\FormatInterface;
 
+/**
+ * Class Json
+ *
+ * @author  Alexander Pushkarev <axp-dev@yandex.com>
+ * @link    https://github.com/axp-dev/FileParser
+ * @package AXP\FileParser\Formats
+ */
 class Json implements FormatInterface
 {
     /**
-     * Парсим данные
+     * Parse Data
      *
-     * @param $string
+     * @param string $string
      *
      * @return array
-     * @throws ParserException
+     * @throws FileParserException
      */
     public function parse($string)
     {
@@ -21,7 +28,7 @@ class Json implements FormatInterface
             $data = json_decode(trim($string), true);
 
             if ( !$data ) {
-                throw new ParserException('Failed to parse json');
+                throw new FileParserException('Failed to parse json');
             }
 
             return $data;

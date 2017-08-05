@@ -1,20 +1,24 @@
 <?php
 
-namespace AXP\Parser\Formats;
+namespace AXP\FileParser\Formats;
 
-use AXP\Parser\Exceptions\ParserException;
-use AXP\Parser\Interfaces\FormatInterface;
+use AXP\FileParser\Interfaces\FormatInterface;
 
+/**
+ * Class QueryString
+ *
+ * @author  Alexander Pushkarev <axp-dev@yandex.com>
+ * @link    https://github.com/axp-dev/FileParser
+ * @package AXP\FileParser\Formats
+ */
 class QueryString implements FormatInterface
 {
-
     /**
-     * Парсим данные
+     * Parse Data
      *
-     * @param $string
+     * @param string $string
      *
      * @return array
-     * @throws ParserException
      */
     public function parse($string)
     {

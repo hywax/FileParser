@@ -1,14 +1,20 @@
 <?php
 
-namespace AXP\Parser\Interfaces;
+namespace AXP\FileParser\Interfaces;
 
+/**
+ * Interface FormatInterface
+ *
+ * @author  Alexander Pushkarev <axp-dev@yandex.com>
+ * @link    https://github.com/axp-dev/FileParser
+ * @package AXP\FileParser\Interfaces
+ */
 interface FormatInterface
 {
-
     /**
-     * Парсим данные
+     * Parse Data
      *
-     * @param $string
+     * @param string $string
      *
      * @return array
      */

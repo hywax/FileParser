@@ -1,20 +1,26 @@
 <?php
 
-namespace AXP\Parser\Formats;
+namespace AXP\FileParser\Formats;
 
-use AXP\Parser\Exceptions\ParserException;
-use AXP\Parser\Interfaces\FormatInterface;
+use AXP\FileParser\Exceptions\FileParserException;
+use AXP\FileParser\Interfaces\FormatInterface;
 
+/**
+ * Class Xml
+ *
+ * @author  Alexander Pushkarev <axp-dev@yandex.com>
+ * @link    https://github.com/axp-dev/FileParser
+ * @package AXP\FileParser\Formats
+ */
 class Xml implements FormatInterface
 {
-
     /**
-     * Парсим данные
+     * Parse Data
      *
-     * @param $string
+     * @param string $string
      *
      * @return array
-     * @throws ParserException
+     * @throws FileParserException
      */
     public function parse($string)
     {
@@ -24,7 +30,7 @@ class Xml implements FormatInterface
 
                 return $xml;
             } catch (\Exception $e) {
-                throw new ParserException('Failed to parse xml');
+                throw new FileParserException('Failed to parse xml');
             }
         }
 
