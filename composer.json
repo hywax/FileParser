@@ -2,7 +2,7 @@
   "name": "axp-dev/file-parser",
   "description": "File Parser Library for PHP",
   "homepage": "https://github.com/axp-dev/FileParser",
-  "keywords": ["parser","json","xml", "querystring", "serialize", "file"],
+  "keywords": ["parser","json","xml", "querystring", "serialize", "file", "laravel", "lumen"],
   "version": "2.0.0",
   "license": "MIT",
   "authors": [
@@ -14,6 +14,9 @@
   ],
   "require": {
     "php": ">=5.6.4"
+  },
+  "require-dev": {
+    "illuminate/support" : "5.4.*"
   },
   "autoload": {
     "psr-4": {
