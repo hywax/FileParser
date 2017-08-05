@@ -4,6 +4,13 @@ namespace AXP\FileParser;
 
 use Illuminate\Support\ServiceProvider;
 
+/***
+ * Class FileParserServiceProvider
+ *
+ * @author  Alexander Pushkarev <axp-dev@yandex.com>
+ * @link    https://github.com/axp-dev/FileParser
+ * @package AXP\FileParser
+ */
 class FileParserServiceProvider extends ServiceProvider
 {
     /**
@@ -26,15 +33,5 @@ class FileParserServiceProvider extends ServiceProvider
         $this->app->bind('FileParser', function() {
             return new FileParser;
         });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['FileParser'];
     }
 }

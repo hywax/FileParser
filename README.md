@@ -8,6 +8,8 @@ File Parser Library for PHP. List of formats: json, xml, query string, serialize
 ## Contents
 1. [Installation](#Installation)
     + [Composer](#Composer)
+    + [Laravel](#Laravel)
+    + [Lumen](#Lumen)
 2. [Usage](#Usage)
     + [Json](#Json)
     + [XML](#XML)
@@ -20,6 +22,30 @@ File Parser Library for PHP. List of formats: json, xml, query string, serialize
 #### Composer
 ```
 $ composer require axp-dev/file-parser
+```
+#### Laravel
+Add service provider within `app/config/app.php`:
+```php
+'providers' => [
+    ...
+    AXP\FileParser\FileParserServiceProvider::class
+]
+```
+Add a facade alias:
+```php
+'aliases' => [
+    ...
+    'FileParser' => AXP\FileParser\Facades\FileParser::class
+]
+```
+#### Lumen
+Add service provider within `bootstrap/app.php`:
+```php
+$app->register('AXP\FileParser\FileParserServiceProvider');
+```
+Add a facade alias:
+```php
+class_alias('AXP\FileParser\Facades\FileParser', 'FileParser');
 ```
 
 ## Usage
