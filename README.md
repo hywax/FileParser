@@ -1,4 +1,8 @@
 # File Parser
+[![Latest Stable Version](https://poser.pugx.org/axp-dev/file-parser/v/stable)](https://packagist.org/packages/axp-dev/file-parser)
+[![Latest Unstable Version](https://poser.pugx.org/axp-dev/file-parser/v/unstable)](https://packagist.org/packages/axp-dev/file-parser)
+[![License](https://poser.pugx.org/axp-dev/file-parser/license)](https://packagist.org/packages/axp-dev/file-parser)
+
 File Parser Library for PHP. List of formats: json, xml, query string, serialize.
 
 ## Contents
