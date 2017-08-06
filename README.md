@@ -51,7 +51,7 @@ class_alias('AXP\FileParser\Facades\FileParser', 'FileParser');
 ```
 
 ## Usage
-### Json
+### JSON
 ```php
 FileParser::json($string) : array
 ```
@@ -106,7 +106,7 @@ $data   = FileParser::serialize($string);
 print_r($data);
 ```
 
-### Ini
+### INI
 ```php
 FileParser::ini($string) : array
 ```
@@ -123,7 +123,7 @@ $data   = FileParser::ini($string);
 print_r($data);
 ```
 
-### Csv
+### CSV
 ```php
 FileParser::csv($string, $delimiter = ';') : array
 ```
