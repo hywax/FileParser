@@ -3,7 +3,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/axp-dev/file-parser/v/unstable)](https://packagist.org/packages/axp-dev/file-parser)
 [![License](https://poser.pugx.org/axp-dev/file-parser/license)](https://packagist.org/packages/axp-dev/file-parser)
 
-File Parser Library for PHP. List of formats: json, xml, query string, serialize, ini.
+File Parser Library for PHP. List of formats: json, xml, query string, serialize, ini, csv.
 
 ## Contents
 1. [Installation](#installation)
@@ -11,11 +11,12 @@ File Parser Library for PHP. List of formats: json, xml, query string, serialize
     + [Laravel](#laravel)
     + [Lumen](#lumen)
 2. [Usage](#usage)
-    + [Json](#json)
+    + [JSON](#json)
     + [XML](#xml)
     + [Query String](#query-string)
     + [Serialize](#serialize)
-    + [Ini](#ini)
+    + [INI](#ini)
+    + [CSV](#csv)
 3. [Author](#author)
 4. [License](#license)
 
@@ -52,7 +53,7 @@ class_alias('AXP\FileParser\Facades\FileParser', 'FileParser');
 ## Usage
 ### Json
 ```php
-public static function json($string) : array
+FileParser::json($string) : array
 ```
 #### Example
 ```php
@@ -64,7 +65,7 @@ print_r($data);
 
 ### XML
 ```php
-public static function xml($string) : array
+FileParser::xml($string) : array
 ```
 #### Example
 ```php
@@ -83,7 +84,7 @@ print_r($data);
 
 ### Query String
 ```php
-public static function queryString($string) : array
+FileParser::queryString($string) : array
 ```
 #### Example
 ```php
@@ -95,7 +96,7 @@ print_r($data);
 
 ### Serialize
 ```php
-public static function serialize($string) : array
+FileParser::serialize($string) : array
 ```
 #### Example
 ```php
@@ -107,7 +108,7 @@ print_r($data);
 
 ### Ini
 ```php
-public static function ini($string) : array
+FileParser::ini($string) : array
 ```
 #### Example
 ```php
@@ -118,6 +119,20 @@ $string = '[card]
            tags[] = home
            tags[] = green';
 $data   = FileParser::ini($string);
+
+print_r($data);
+```
+
+### Csv
+```php
+FileParser::csv($string, $delimiter = ';') : array
+```
+#### Example
+```php
+$string = 'Title1;Title2;Title3
+           one;two;three
+           example1;example2;example3';
+$data   = FileParser::csv($string);
 
 print_r($data);
 ```

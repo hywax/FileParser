@@ -2,6 +2,7 @@
 
 namespace AXP\FileParser;
 
+use AXP\FileParser\Formats\Csv;
 use AXP\FileParser\Formats\Ini;
 use AXP\FileParser\Formats\Json;
 use AXP\FileParser\Formats\QueryString;
@@ -67,7 +68,7 @@ class FileParser
     }
 
     /**
-     * Parse Ini
+     * Parse INI
      *
      * @param string $string
      *
@@ -76,6 +77,19 @@ class FileParser
     public static function ini($string)
     {
         return self::parse($string, new Ini());
+    }
+
+    /**
+     * Parse CSV
+     *
+     * @param string $string
+     * @param string $delimiter
+     *
+     * @return array
+     */
+    public static function csv($string, $delimiter = ';')
+    {
+        return self::parse($string, new Csv($delimiter));
     }
 
     /**
