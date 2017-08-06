@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Facade;
  * @method  static array xml(string $string) Parse XML
  * @method  static array queryString(string $string) Parse Query String
  * @method  static array serialize(string $string) Parse Serialize
+ * @method  static array ini(string $string) Parse Ini
  */
 class FileParser extends Facade
 {

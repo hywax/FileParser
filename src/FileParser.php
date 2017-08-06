@@ -2,6 +2,7 @@
 
 namespace AXP\FileParser;
 
+use AXP\FileParser\Formats\Ini;
 use AXP\FileParser\Formats\Json;
 use AXP\FileParser\Formats\QueryString;
 use AXP\FileParser\Formats\Serialize;
@@ -63,6 +64,18 @@ class FileParser
     public static function serialize($string)
     {
         return self::parse($string, new Serialize());
+    }
+
+    /**
+     * Parse Ini
+     *
+     * @param string $string
+     *
+     * @return array
+     */
+    public static function ini($string)
+    {
+        return self::parse($string, new Ini());
     }
 
     /**

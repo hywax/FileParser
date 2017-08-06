@@ -3,7 +3,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/axp-dev/file-parser/v/unstable)](https://packagist.org/packages/axp-dev/file-parser)
 [![License](https://poser.pugx.org/axp-dev/file-parser/license)](https://packagist.org/packages/axp-dev/file-parser)
 
-File Parser Library for PHP. List of formats: json, xml, query string, serialize.
+File Parser Library for PHP. List of formats: json, xml, query string, serialize, ini.
 
 ## Contents
 1. [Installation](#installation)
@@ -15,6 +15,7 @@ File Parser Library for PHP. List of formats: json, xml, query string, serialize
     + [XML](#xml)
     + [Query String](#query-string)
     + [Serialize](#serialize)
+    + [Ini](#ini)
 3. [Author](#author)
 4. [License](#license)
 
@@ -100,6 +101,23 @@ public static function serialize($string) : array
 ```php
 $string = 'a:4:{s:2:"id";s:1:"1";s:4:"name";s:12:"A green door";s:5:"price";s:4:"12.5";s:4:"tags";a:2:{i:0;s:4:"home";i:1;s:5:"green";}}';
 $data   = FileParser::serialize($string);
+
+print_r($data);
+```
+
+### Ini
+```php
+public static function ini($string) : array
+```
+#### Example
+```php
+$string = '[card]
+           id = 1
+           name = "A green door"
+           price = 12.5
+           tags[] = home
+           tags[] = green';
+$data   = FileParser::ini($string);
 
 print_r($data);
 ```
