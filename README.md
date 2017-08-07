@@ -17,6 +17,7 @@ File Parser Library for PHP. List of formats: json, xml, query string, serialize
     + [Serialize](#serialize)
     + [INI](#ini)
     + [CSV](#csv)
+    + [YAML](#yaml)
 3. [Author](#author)
 4. [License](#license)
 
@@ -133,6 +134,20 @@ $string = 'Title1;Title2;Title3
            one;two;three
            example1;example2;example3';
 $data   = FileParser::csv($string);
+
+print_r($data);
+```
+
+### YAML
+```php
+FileParser::yaml($string) : array
+```
+#### Example
+```php
+$string = 'latitude: 52.7157856867271
+           longitude: -8.8741735070805
+           zoom: 15';
+$data   = FileParser::yaml($file);
 
 print_r($data);
 ```

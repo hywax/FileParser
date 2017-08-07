@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Facade;
  * @method  static array serialize(string $string) Parse Serialize
  * @method  static array ini(string $string) Parse Ini
  * @method  static array csv(string $string, string $delimiter = ';') Parse CSV
+ * @method  static array yaml(string $string) Parse YAML
  */
 class FileParser extends Facade
 {

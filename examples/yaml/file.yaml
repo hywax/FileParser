@@ -1,0 +1,21 @@
+# Map centre Latitude & Longitude
+# ------------------------------------------------------------------------------
+latitude: 52.7157856867271
+longitude: -8.8741735070805
+
+zoom: 15
+#height: 548px
+
+# Set custom colour variables
+# ------------------------------------------------------------------------------
+waterColour: "#398A8D"
+landColour: "#dec7c7"
+mainRoadColour: "#777777"
+minorRoadColour: "#a9a9a9"
+
+# A nested array
+# ------------------------------------------------------------------------------
+test:
+- One
+- Two
+- Three

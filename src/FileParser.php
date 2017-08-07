@@ -8,6 +8,7 @@ use AXP\FileParser\Formats\Json;
 use AXP\FileParser\Formats\QueryString;
 use AXP\FileParser\Formats\Serialize;
 use AXP\FileParser\Formats\Xml;
+use AXP\FileParser\Formats\Yaml;
 use AXP\FileParser\Interfaces\FormatInterface;
 
 /**
@@ -90,6 +91,18 @@ class FileParser
     public static function csv($string, $delimiter = ';')
     {
         return self::parse($string, new Csv($delimiter));
+    }
+
+    /**
+     * Parse YAML
+     *
+     * @param string $string
+     *
+     * @return array
+     */
+    public static function yaml($string)
+    {
+        return self::parse($string, new Yaml());
     }
 
     /**
