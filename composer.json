@@ -3,7 +3,7 @@
   "description": "File Parser Library for PHP",
   "homepage": "https://github.com/axp-dev/FileParser",
   "keywords": ["parser","json","xml", "querystring", "serialize", "file", "laravel", "lumen", "ini", "csv", "yaml"],
-  "version": "2.3.2",
+  "version": "2.4.0",
   "license": "MIT",
   "authors": [
     {
